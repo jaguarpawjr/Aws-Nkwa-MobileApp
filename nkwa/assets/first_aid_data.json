@@ -1,0 +1,173 @@
+{
+  "guides": [
+    {
+      "id": "choking_adult",
+      "title": "Choking (adult)",
+      "steps": 5,
+      "category": "Airway emergency",
+      "iconKey": "person",
+      "iconColorHex": "7C3AED",
+      "iconBgHex": "EDE9FE",
+      "searchTerms": ["chok", "adult", "airway", "heimlich", "abdominal", "cough"],
+      "hasDetail": true,
+      "overview": "Choking occurs when a foreign object blocks the airway, making it difficult or impossible to breathe. Act fast — a blocked airway can cause unconsciousness within minutes.",
+      "warning": "Call Ambulance immediately if the person loses consciousness or the object cannot be dislodged after several attempts.",
+      "stepsDetail": [
+        {
+          "number": 1,
+          "title": "Ask if they can cough",
+          "description": "If the person can speak, cough forcefully, or breathe, encourage them to keep coughing. A strong cough is the most effective way to clear the blockage — do not interfere."
+        },
+        {
+          "number": 2,
+          "title": "Lean them forward & give 5 back blows",
+          "description": "Stand to the side and slightly behind. Support their chest with one hand, lean them forward, then strike firmly 5 times between the shoulder blades using the heel of your other hand."
+        },
+        {
+          "number": 3,
+          "title": "Give 5 abdominal thrusts (Heimlich)",
+          "description": "Stand behind the person. Make a fist with one hand just above their navel and below the chest. Grip with your other hand and pull sharply inward and upward. Repeat 5 times."
+        },
+        {
+          "number": 4,
+          "title": "Alternate until cleared",
+          "description": "Continue alternating 5 back blows and 5 abdominal thrusts until the object is dislodged or the person can breathe, speak, or cough effectively on their own."
+        },
+        {
+          "number": 5,
+          "title": "If they collapse — call Ambulance & start CPR",
+          "description": "If the person becomes unconscious, lower them carefully to the ground. Call 1Ambulance immediately and begin CPR. Before each rescue breath, look in the mouth and remove any visible object only if clearly seen."
+        }
+      ]
+    },
+    {
+      "id": "choking_infant",
+      "title": "Choking (infant)",
+      "steps": 4,
+      "category": "Under 12 months",
+      "iconKey": "child_care",
+      "iconColorHex": "059669",
+      "iconBgHex": "D1FAE5",
+      "searchTerms": ["chok", "infant", "baby", "child", "back blow"],
+      "hasDetail": false,
+      "overview": null,
+      "warning": null,
+      "stepsDetail": []
+    },
+    {
+      "id": "burns",
+      "title": "Burns treatment",
+      "steps": 5,
+      "category": "Heat & chemical",
+      "iconKey": "fire",
+      "iconColorHex": "F97316",
+      "iconBgHex": "FFEDD5",
+      "searchTerms": ["burn", "fire", "heat", "chemical", "scald", "blister", "skin"],
+      "hasDetail": false,
+      "overview": null,
+      "warning": null,
+      "stepsDetail": []
+    },
+    {
+      "id": "cpr",
+      "title": "CPR / no pulse",
+      "steps": 6,
+      "category": "Cardiac arrest",
+      "iconKey": "monitor_heart",
+      "iconColorHex": "EF4444",
+      "iconBgHex": "FEE2E2",
+      "searchTerms": ["cpr", "pulse", "heart", "cardiac", "arrest", "resuscit", "compress", "chest"],
+      "hasDetail": true,
+      "overview": "CPR (Cardiopulmonary Resuscitation) keeps blood and oxygen moving when the heart stops. Every second without CPR reduces survival chances — begin immediately and do not wait for emergency services.",
+      "warning": "Do not stop CPR until paramedics arrive, an AED is ready to use, or the person starts breathing normally. If you are untrained in rescue breaths, perform hands-only CPR with continuous chest compressions.",
+      "stepsDetail": [
+        {
+          "number": 1,
+          "title": "Check safety & response",
+          "description": "Make sure the area is safe. Tap the person's shoulders firmly and shout 'Are you OK?' If there is no response, shout for help and call Ambulance — or ask a bystander to call while you begin."
+        },
+        {
+          "number": 2,
+          "title": "Lay flat & open the airway",
+          "description": "Place the person on their back on a firm, flat surface. Tilt the head back gently and lift the chin to open the airway. Look, listen, and feel for breathing for no more than 10 seconds."
+        },
+        {
+          "number": 3,
+          "title": "Give 30 chest compressions",
+          "description": "Place the heel of one hand on the centre of the chest, then your other hand on top. Press down at least 5–6 cm at a rate of 100–120 per minute. Allow the chest to fully rise between each compression."
+        },
+        {
+          "number": 4,
+          "title": "Give 2 rescue breaths",
+          "description": "Tilt the head back, pinch the nose shut, and seal your mouth over theirs. Breathe steadily for 1 second and watch for chest rise. Give a second breath, then return to compressions immediately."
+        },
+        {
+          "number": 5,
+          "title": "Continue the 30:2 cycle",
+          "description": "Maintain 30 compressions followed by 2 rescue breaths without stopping. If an AED arrives, apply it as soon as possible and follow every voice instruction it gives."
+        },
+        {
+          "number": 6,
+          "title": "Keep going until help takes over",
+          "description": "Do not stop unless emergency services take over, the person starts breathing normally on their own, an AED advises you to stop, or you are physically unable to continue."
+        }
+      ]
+    },
+    {
+      "id": "fainting",
+      "title": "Fainting / collapse",
+      "steps": 4,
+      "category": "Loss of consciousness",
+      "iconKey": "accessibility",
+      "iconColorHex": "0891B2",
+      "iconBgHex": "CFFAFE",
+      "searchTerms": ["faint", "collaps", "unconscious", "dizzy", "pass out", "syncope"],
+      "hasDetail": false,
+      "overview": null,
+      "warning": null,
+      "stepsDetail": []
+    },
+    {
+      "id": "fracture",
+      "title": "Fracture & dislocation",
+      "steps": 5,
+      "category": "Bone injuries",
+      "iconKey": "medical_info",
+      "iconColorHex": "D97706",
+      "iconBgHex": "FEF3C7",
+      "searchTerms": ["fracture", "bone", "disloc", "break", "splint", "joint"],
+      "hasDetail": false,
+      "overview": null,
+      "warning": null,
+      "stepsDetail": []
+    },
+    {
+      "id": "bleeding",
+      "title": "Severe bleeding",
+      "steps": 4,
+      "category": "Wound care",
+      "iconKey": "bloodtype",
+      "iconColorHex": "DC2626",
+      "iconBgHex": "FEE2E2",
+      "searchTerms": ["bleed", "blood", "wound", "cut", "hemorrh", "tourniquet"],
+      "hasDetail": false,
+      "overview": null,
+      "warning": null,
+      "stepsDetail": []
+    },
+    {
+      "id": "choking_cpr",
+      "title": "Choking with CPR",
+      "steps": 7,
+      "category": "Unconscious person",
+      "iconKey": "favorite",
+      "iconColorHex": "E11D48",
+      "iconBgHex": "FFE4E6",
+      "searchTerms": ["chok", "cpr", "unconscious", "rescue", "unresponsive"],
+      "hasDetail": false,
+      "overview": null,
+      "warning": null,
+      "stepsDetail": []
+    }
+  ]
+}
