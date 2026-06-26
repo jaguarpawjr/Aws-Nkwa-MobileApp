@@ -54,8 +54,12 @@ class _OtpScreenState extends State<OtpScreen> with TickerProviderStateMixin {
 
   @override
   void dispose() {
-    for (final c in _controllers) c.dispose();
-    for (final n in _focusNodes) n.dispose();
+    for (final c in _controllers) {
+      c.dispose();
+    }
+    for (final n in _focusNodes) {
+      n.dispose();
+    }
     _resendTimer?.cancel();
     _notifController.dispose();
     super.dispose();
