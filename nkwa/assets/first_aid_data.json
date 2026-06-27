@@ -36,7 +36,7 @@
         {
           "number": 5,
           "title": "If they collapse — call Ambulance & start CPR",
-          "description": "If the person becomes unconscious, lower them carefully to the ground. Call 1Ambulance immediately and begin CPR. Before each rescue breath, look in the mouth and remove any visible object only if clearly seen."
+          "description": "If the person becomes unconscious, lower them carefully to the ground. Call Ambulance immediately and begin CPR. Before each rescue breath, look in the mouth and remove any visible object only if clearly seen."
         }
       ]
     },
@@ -49,10 +49,31 @@
       "iconColorHex": "059669",
       "iconBgHex": "D1FAE5",
       "searchTerms": ["chok", "infant", "baby", "child", "back blow"],
-      "hasDetail": false,
-      "overview": null,
-      "warning": null,
-      "stepsDetail": []
+      "hasDetail": true,
+      "overview": "Infants can choke silently because their airway is small. Use gentle, firm back blows and chest thrusts only; do not use abdominal thrusts on a baby under 12 months.",
+      "warning": "Call Ambulance immediately if the baby cannot cry, cough, breathe, or becomes limp or unconscious.",
+      "stepsDetail": [
+        {
+          "number": 1,
+          "title": "Check breathing and call for help",
+          "description": "If the baby cannot cry, cough, or breathe, shout for help. Ask someone nearby to call Ambulance while you begin first aid."
+        },
+        {
+          "number": 2,
+          "title": "Give 5 back blows",
+          "description": "Lay the baby face down along your forearm with the head lower than the chest. Support the head and jaw, then give 5 firm blows between the shoulder blades with the heel of your hand."
+        },
+        {
+          "number": 3,
+          "title": "Give 5 chest thrusts",
+          "description": "Turn the baby face up, still keeping the head lower than the chest. Place two fingers in the centre of the chest and press sharply downward 5 times."
+        },
+        {
+          "number": 4,
+          "title": "Repeat and start CPR if needed",
+          "description": "Alternate 5 back blows and 5 chest thrusts until the object clears. If the baby becomes unconscious, begin infant CPR and keep checking the mouth for a visible object."
+        }
+      ]
     },
     {
       "id": "burns",
@@ -63,10 +84,36 @@
       "iconColorHex": "F97316",
       "iconBgHex": "FFEDD5",
       "searchTerms": ["burn", "fire", "heat", "chemical", "scald", "blister", "skin"],
-      "hasDetail": false,
-      "overview": null,
-      "warning": null,
-      "stepsDetail": []
+      "hasDetail": true,
+      "overview": "Burns can keep damaging skin after the heat source is gone. Cooling the area quickly reduces pain, swelling, and the depth of injury.",
+      "warning": "Call Ambulance for burns to the face, hands, genitals, large areas, chemical or electrical burns, or if the person has trouble breathing.",
+      "stepsDetail": [
+        {
+          "number": 1,
+          "title": "Move away from danger",
+          "description": "Stop the burning process. Move the person away from flames, hot liquids, steam, chemicals, or electricity only when it is safe for you to do so."
+        },
+        {
+          "number": 2,
+          "title": "Cool with running water",
+          "description": "Hold the burn under cool running water for at least 20 minutes. Do not use ice, butter, toothpaste, or powders."
+        },
+        {
+          "number": 3,
+          "title": "Remove tight items",
+          "description": "Remove rings, watches, belts, or tight clothing near the burn before swelling starts. Do not remove anything stuck to the skin."
+        },
+        {
+          "number": 4,
+          "title": "Cover the burn loosely",
+          "description": "Cover the cooled burn with clean plastic wrap or a sterile non-stick dressing. Keep it loose and avoid bursting blisters."
+        },
+        {
+          "number": 5,
+          "title": "Treat for shock",
+          "description": "Keep the person warm, calm, and seated or lying down. Raise their legs if they feel faint, unless this causes pain or breathing difficulty."
+        }
+      ]
     },
     {
       "id": "cpr",
@@ -122,10 +169,31 @@
       "iconColorHex": "0891B2",
       "iconBgHex": "CFFAFE",
       "searchTerms": ["faint", "collaps", "unconscious", "dizzy", "pass out", "syncope"],
-      "hasDetail": false,
-      "overview": null,
-      "warning": null,
-      "stepsDetail": []
+      "hasDetail": true,
+      "overview": "Fainting is usually a short loss of consciousness caused by reduced blood flow to the brain. Most people recover quickly, but collapse can also signal a serious emergency.",
+      "warning": "Call Ambulance if the person is not fully awake within 1 minute, has chest pain, trouble breathing, injury from the fall, seizure, pregnancy, diabetes, or repeated fainting.",
+      "stepsDetail": [
+        {
+          "number": 1,
+          "title": "Lay them flat",
+          "description": "Help the person lie on their back. If they fell, check for injury before moving them."
+        },
+        {
+          "number": 2,
+          "title": "Raise the legs",
+          "description": "Lift their legs about 30 cm if it does not cause pain. Loosen tight clothing around the neck, chest, and waist."
+        },
+        {
+          "number": 3,
+          "title": "Check breathing and recovery",
+          "description": "Make sure they are breathing normally. When they wake, keep them lying down for several minutes and help them sit up slowly."
+        },
+        {
+          "number": 4,
+          "title": "Do not give food immediately",
+          "description": "Do not give food or drink until they are fully alert. If they vomit, turn them on their side to keep the airway clear."
+        }
+      ]
     },
     {
       "id": "fracture",
@@ -136,10 +204,36 @@
       "iconColorHex": "D97706",
       "iconBgHex": "FEF3C7",
       "searchTerms": ["fracture", "bone", "disloc", "break", "splint", "joint"],
-      "hasDetail": false,
-      "overview": null,
-      "warning": null,
-      "stepsDetail": []
+      "hasDetail": true,
+      "overview": "A fracture or dislocation can worsen if the injured part is moved. The goal is to keep it still, reduce swelling, and get medical care.",
+      "warning": "Call Ambulance for open fractures, severe pain, loss of feeling, blue or cold fingers or toes, spine injury, heavy bleeding, or if the limb looks badly deformed.",
+      "stepsDetail": [
+        {
+          "number": 1,
+          "title": "Keep the person still",
+          "description": "Ask the person not to move the injured area. Support it in the position you found it and avoid trying to straighten bones or joints."
+        },
+        {
+          "number": 2,
+          "title": "Control bleeding",
+          "description": "If there is bleeding, apply gentle pressure around the wound with a clean cloth. Do not press directly on exposed bone."
+        },
+        {
+          "number": 3,
+          "title": "Immobilize the injury",
+          "description": "Use a padded splint, folded cloth, or sling to prevent movement above and below the injury. Tie supports snugly but not tightly."
+        },
+        {
+          "number": 4,
+          "title": "Apply cold gently",
+          "description": "Wrap ice or a cold pack in cloth and place it near the injury for up to 20 minutes to reduce swelling. Do not put ice directly on skin."
+        },
+        {
+          "number": 5,
+          "title": "Watch circulation",
+          "description": "Check fingers or toes for warmth, colour, and sensation. Loosen bandages if they become numb, cold, blue, or increasingly painful."
+        }
+      ]
     },
     {
       "id": "bleeding",
@@ -150,10 +244,31 @@
       "iconColorHex": "DC2626",
       "iconBgHex": "FEE2E2",
       "searchTerms": ["bleed", "blood", "wound", "cut", "hemorrh", "tourniquet"],
-      "hasDetail": false,
-      "overview": null,
-      "warning": null,
-      "stepsDetail": []
+      "hasDetail": true,
+      "overview": "Severe bleeding can become life-threatening within minutes. Direct pressure is the most important first step.",
+      "warning": "Call Ambulance immediately if bleeding is spurting, does not slow with firm pressure, soaks through dressings, or follows a major injury.",
+      "stepsDetail": [
+        {
+          "number": 1,
+          "title": "Apply firm direct pressure",
+          "description": "Press hard on the wound with a clean cloth, gauze, or your gloved hand. Keep steady pressure without repeatedly lifting the dressing to check."
+        },
+        {
+          "number": 2,
+          "title": "Lay them down",
+          "description": "Help the person lie down. If possible, raise the bleeding area above heart level while maintaining pressure."
+        },
+        {
+          "number": 3,
+          "title": "Add more dressings",
+          "description": "If blood soaks through, place another dressing on top and keep pressing. Do not remove the first dressing because it may disturb clotting."
+        },
+        {
+          "number": 4,
+          "title": "Use a tourniquet only for extreme limb bleeding",
+          "description": "If bleeding from an arm or leg cannot be controlled and help is delayed, apply a tourniquet above the wound if trained. Note the time and do not loosen it."
+        }
+      ]
     },
     {
       "id": "choking_cpr",
@@ -164,10 +279,46 @@
       "iconColorHex": "E11D48",
       "iconBgHex": "FFE4E6",
       "searchTerms": ["chok", "cpr", "unconscious", "rescue", "unresponsive"],
-      "hasDetail": false,
-      "overview": null,
-      "warning": null,
-      "stepsDetail": []
+      "hasDetail": true,
+      "overview": "If a choking person becomes unconscious, CPR helps move air and may dislodge the object. Do not blindly sweep inside the mouth.",
+      "warning": "Call Ambulance immediately before starting CPR if you are alone with an adult. For a child or infant, give about 2 minutes of CPR first if no one else can call.",
+      "stepsDetail": [
+        {
+          "number": 1,
+          "title": "Lower them safely",
+          "description": "Support the person to the ground and lay them on their back on a firm, flat surface. Shout for help and call Ambulance."
+        },
+        {
+          "number": 2,
+          "title": "Open the airway",
+          "description": "Tilt the head back and lift the chin. Look inside the mouth. Remove an object only if you can clearly see it and reach it easily."
+        },
+        {
+          "number": 3,
+          "title": "Start chest compressions",
+          "description": "Place your hands in the centre of the chest and give 30 firm compressions at 100 to 120 per minute. Let the chest fully rise between compressions."
+        },
+        {
+          "number": 4,
+          "title": "Check the mouth again",
+          "description": "After compressions, open the airway and look for a visible object. Remove it only if clearly seen. Do not push fingers blindly into the throat."
+        },
+        {
+          "number": 5,
+          "title": "Try 2 rescue breaths",
+          "description": "Pinch the nose, seal your mouth over theirs, and give 2 breaths. If the chest does not rise, reposition the head and continue compressions."
+        },
+        {
+          "number": 6,
+          "title": "Repeat 30:2 cycles",
+          "description": "Continue cycles of 30 compressions and 2 breaths, checking for a visible object before breaths each time."
+        },
+        {
+          "number": 7,
+          "title": "Continue until help arrives",
+          "description": "Keep going until emergency services take over, the person starts breathing normally, or you are physically unable to continue."
+        }
+      ]
     }
   ]
 }
