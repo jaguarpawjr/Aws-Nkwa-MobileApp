@@ -42,7 +42,7 @@ class _DetailHeader extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [AppColors.violet, Color(0xFF9333EA)],
+          colors: [AppColors.red, Color(0xFF9333EA)],
         ),
       ),
       child: Stack(

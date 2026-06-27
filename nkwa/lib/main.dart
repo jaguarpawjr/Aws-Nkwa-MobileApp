@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           title: 'Nkwa',
           theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF6D28D9)),
+            colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFDC2626)),
           ),
           home: const SplashScreen(),
         );
