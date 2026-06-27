@@ -193,12 +193,12 @@ class _OtpScreenState extends State<OtpScreen> with TickerProviderStateMixin {
                               width: 38.w,
                               height: 38.w,
                               decoration: BoxDecoration(
-                                color: AppColors.violet.withValues(alpha: 0.08),
+                                color: AppColors.red.withValues(alpha: 0.08),
                                 borderRadius: BorderRadius.circular(10.r),
                               ),
                               child: Icon(
                                 Icons.sms_outlined,
-                                color: AppColors.violet,
+                                color: AppColors.red,
                                 size: 18.r,
                               ),
                             ),
@@ -218,7 +218,7 @@ class _OtpScreenState extends State<OtpScreen> with TickerProviderStateMixin {
                                         style: TextStyle(
                                           color: _secondsRemaining > 0
                                               ? AppColors.placeholder
-                                              : AppColors.violet,
+                                              : AppColors.red,
                                           fontWeight: FontWeight.w700,
                                         ),
                                       ),
@@ -242,7 +242,7 @@ class _OtpScreenState extends State<OtpScreen> with TickerProviderStateMixin {
                           style: TextStyle(
                             fontSize: 13.sp,
                             fontWeight: FontWeight.w600,
-                            color: AppColors.violet,
+                            color: AppColors.red,
                           ),
                         ),
                       ),
@@ -312,7 +312,7 @@ class _SmsNotification extends StatelessWidget {
               height: 40.w,
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                  colors: [AppColors.violet, AppColors.violetDeep],
+                  colors: [AppColors.red, AppColors.redDeep],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
@@ -359,7 +359,7 @@ class _SmsNotification extends StatelessWidget {
                     'Tap to autofill',
                     style: TextStyle(
                       fontSize: 11.sp,
-                      color: AppColors.violet,
+                      color: AppColors.red,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -392,7 +392,7 @@ class _Header extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [AppColors.violet, AppColors.violetDeep],
+            colors: [AppColors.red, AppColors.redDeep],
           ),
         ),
         child: Stack(
@@ -474,11 +474,11 @@ class _VerifyButton extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(28.r),
           gradient: const LinearGradient(
-            colors: [AppColors.violet, AppColors.violetDeep],
+            colors: [AppColors.red, AppColors.redDeep],
           ),
           boxShadow: [
             BoxShadow(
-              color: AppColors.violet.withValues(alpha: 0.35),
+              color: AppColors.red.withValues(alpha: 0.35),
               blurRadius: 18,
               offset: const Offset(0, 8),
             ),
@@ -543,23 +543,23 @@ class _OtpDigitBoxState extends State<_OtpDigitBox> {
       height: 64.h,
       decoration: BoxDecoration(
         color: _isFocused
-            ? AppColors.violet.withValues(alpha: 0.05)
+            ? AppColors.red.withValues(alpha: 0.05)
             : filled
-                ? AppColors.violet.withValues(alpha: 0.04)
+                ? AppColors.red.withValues(alpha: 0.04)
                 : Colors.white,
         borderRadius: BorderRadius.circular(14.r),
         border: Border.all(
           color: _isFocused
-              ? AppColors.violet
+              ? AppColors.red
               : filled
-                  ? AppColors.violet.withValues(alpha: 0.4)
+                  ? AppColors.red.withValues(alpha: 0.4)
                   : const Color(0xFFE2E2E2),
           width: _isFocused ? 2.0 : 1.5,
         ),
         boxShadow: _isFocused
             ? [
                 BoxShadow(
-                  color: AppColors.violet.withValues(alpha: 0.15),
+                  color: AppColors.red.withValues(alpha: 0.15),
                   blurRadius: 10,
                   offset: const Offset(0, 4),
                 ),
@@ -586,7 +586,7 @@ class _OtpDigitBoxState extends State<_OtpDigitBox> {
         style: TextStyle(
           fontSize: 22.sp,
           fontWeight: FontWeight.w800,
-          color: AppColors.violet,
+          color: AppColors.red,
         ),
         decoration: const InputDecoration(
           counterText: '',

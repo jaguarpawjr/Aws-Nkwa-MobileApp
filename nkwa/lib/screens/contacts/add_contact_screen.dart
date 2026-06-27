@@ -37,8 +37,8 @@ class _AddContactSheetState extends State<_AddContactSheet> {
 
   String _addedName = '';
   String _addedInitials = '';
-  Color _addedColorA = AppColors.violet;
-  Color _addedColorB = AppColors.violetDeep;
+  Color _addedColorA = AppColors.red;
+  Color _addedColorB = AppColors.redDeep;
 
   @override
   void dispose() {
@@ -95,7 +95,7 @@ class _AddContactSheetState extends State<_AddContactSheet> {
         borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
         boxShadow: [
           BoxShadow(
-            color: AppColors.violet.withValues(alpha: 0.10),
+            color: AppColors.red.withValues(alpha: 0.10),
             blurRadius: 32,
             offset: const Offset(0, -4),
           ),
@@ -144,10 +144,10 @@ class _AddContactSheetState extends State<_AddContactSheet> {
                     height: 32.w,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                      color: AppColors.violetSoft,
+                      color: AppColors.redSoft,
                       shape: BoxShape.circle,
                     ),
-                    child: Icon(Icons.close, size: 16.r, color: AppColors.violet),
+                    child: Icon(Icons.close, size: 16.r, color: AppColors.red),
                   ),
                 ),
               ],
@@ -281,7 +281,7 @@ class _FormContent extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: onSubmit,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.violet,
+                  backgroundColor: AppColors.red,
                   foregroundColor: Colors.white,
                   elevation: 0,
                   shape: RoundedRectangleBorder(
@@ -372,7 +372,7 @@ class _Field extends StatelessWidget {
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(13.r),
-              borderSide: BorderSide(color: AppColors.violet, width: 1.5),
+              borderSide: BorderSide(color: AppColors.red, width: 1.5),
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(13.r),
@@ -429,7 +429,7 @@ class _SuccessContent extends StatelessWidget {
                 alignment: Alignment.center,
                 child:   Icon(
                     Icons.check_circle_rounded,
-                    color: AppColors.violet,
+                    color: AppColors.red,
                     size: 65.r,
                   ),
               ),
@@ -444,7 +444,7 @@ class _SuccessContent extends StatelessWidget {
           Container(
             padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 5.h),
             decoration: BoxDecoration(
-              color: AppColors.violet.withValues(alpha: 0.08),
+              color: AppColors.red.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(20.r),
             ),
             child: Text(
@@ -452,7 +452,7 @@ class _SuccessContent extends StatelessWidget {
               style: TextStyle(
                 fontSize: 11.sp,
                 fontWeight: FontWeight.w700,
-                color: AppColors.violet,
+                color: AppColors.red,
                 letterSpacing: 0.4,
               ),
             ),
@@ -493,10 +493,10 @@ class _SuccessContent extends StatelessWidget {
             child: ElevatedButton(
               onPressed: onAddAnother,
               style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.violet,
+                backgroundColor: AppColors.red,
                 foregroundColor: Colors.white,
                 elevation: 0,
-                shadowColor: AppColors.violet.withValues(alpha: 0.35),
+                shadowColor: AppColors.red.withValues(alpha: 0.35),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16.r),
                 ),

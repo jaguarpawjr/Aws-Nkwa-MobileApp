@@ -164,8 +164,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(height: 12.h),
                     _EmergencyActionCard(
                       icon: Icons.shield_outlined,
-                      iconColor: AppColors.violet,
-                      iconBg: AppColors.violetSoft,
+                      iconColor: AppColors.red,
+                      iconBg: AppColors.redSoft,
                       title: 'Police',
                       subtitle: 'Crime & security response',
                       onTap: () => Navigator.of(context).push(MaterialPageRoute(
@@ -223,7 +223,7 @@ class _TopBar extends StatelessWidget {
               borderRadius: BorderRadius.circular(16.r),
               boxShadow: [
                 BoxShadow(
-                  color: AppColors.violet.withValues(alpha: 0.06),
+                  color: AppColors.red.withValues(alpha: 0.06),
                   blurRadius: 12,
                   offset: const Offset(0, 4),
                 ),
@@ -273,7 +273,7 @@ class _NotificationButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(16.r),
               boxShadow: [
                 BoxShadow(
-                  color: AppColors.violet.withValues(alpha: 0.06),
+                  color: AppColors.red.withValues(alpha: 0.06),
                   blurRadius: 12,
                   offset: const Offset(0, 4),
                 ),
@@ -520,7 +520,7 @@ class _EmergencyActionCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(18.r),
           boxShadow: [
             BoxShadow(
-              color: AppColors.violet.withValues(alpha: 0.05),
+              color: AppColors.red.withValues(alpha: 0.05),
               blurRadius: 10,
               offset: const Offset(0, 4),
             ),
@@ -593,7 +593,7 @@ class _BottomNavBar extends StatelessWidget {
         borderRadius: BorderRadius.circular(50.r),
         boxShadow: [
           BoxShadow(
-            color: AppColors.violet.withValues(alpha: 0.12),
+            color: AppColors.red.withValues(alpha: 0.12),
             blurRadius: 24,
             offset: const Offset(0, 10),
           ),
@@ -611,7 +611,7 @@ class _BottomNavBar extends StatelessWidget {
                 margin: EdgeInsets.symmetric(horizontal: 3.w),
                 padding: EdgeInsets.symmetric(vertical: 5.h),
                 decoration: BoxDecoration(
-                  color: isActive ? AppColors.violet : Colors.transparent,
+                  color: isActive ? AppColors.red : Colors.transparent,
                   borderRadius: BorderRadius.circular(50.r),
                 ),
                 child: Column(
@@ -659,7 +659,7 @@ class _AddContactPromptSheet extends StatelessWidget {
         borderRadius: BorderRadius.circular(28.r),
         boxShadow: [
           BoxShadow(
-            color: AppColors.violet.withValues(alpha: 0.12),
+            color: AppColors.red.withValues(alpha: 0.12),
             blurRadius: 32,
             offset: const Offset(0, -4),
           ),
@@ -684,10 +684,10 @@ class _AddContactPromptSheet extends StatelessWidget {
             height: 64.w,
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: AppColors.violetSoft,
+              color: AppColors.redSoft,
               borderRadius: BorderRadius.circular(20.r),
             ),
-            child: Icon(Icons.people_alt_rounded, size: 30.r, color: AppColors.violet),
+            child: Icon(Icons.people_alt_rounded, size: 30.r, color: AppColors.red),
           ),
           SizedBox(height: 16.h),
           Text(
@@ -715,7 +715,7 @@ class _AddContactPromptSheet extends StatelessWidget {
             child: ElevatedButton(
               onPressed: onAdd,
               style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.violet,
+                backgroundColor: AppColors.red,
                 foregroundColor: Colors.white,
                 elevation: 0,
                 shape: RoundedRectangleBorder(

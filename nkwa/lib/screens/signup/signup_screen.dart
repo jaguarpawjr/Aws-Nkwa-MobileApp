@@ -48,7 +48,7 @@ class _SignupScreenState extends State<SignupScreen> {
   bool    _obscurePassword  = true;
   double  _passwordStrength = 0;
   String  _strengthLabel    = '';
-  Color   _strengthColor    = AppColors.lavender;
+  Color   _strengthColor    = AppColors.redLight;
 
   @override
   void dispose() {
@@ -67,7 +67,7 @@ class _SignupScreenState extends State<SignupScreen> {
         case 0:
           _passwordStrength = 0;
           _strengthLabel    = '';
-          _strengthColor    = AppColors.lavender;
+          _strengthColor    = AppColors.redLight;
         case 1:
           _passwordStrength = 0.25;
           _strengthLabel    = 'Weak';
@@ -83,7 +83,7 @@ class _SignupScreenState extends State<SignupScreen> {
         default:
           _passwordStrength = 1;
           _strengthLabel    = 'Very strong';
-          _strengthColor    = AppColors.violet;
+          _strengthColor    = AppColors.red;
       }
     });
   }
@@ -118,7 +118,7 @@ class _SignupScreenState extends State<SignupScreen> {
               return ListTile(
                 title: Text(region),
                 trailing: _selectedRegion == region
-                    ? Icon(Icons.check, color: AppColors.violet)
+                    ? Icon(Icons.check, color: AppColors.red)
                     : null,
                 onTap: () => Navigator.of(context).pop(region),
               );
@@ -303,7 +303,7 @@ Widget _buildTextField({
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(14.r),
-        borderSide: BorderSide(color: AppColors.violet, width: 1.5),
+        borderSide: BorderSide(color: AppColors.red, width: 1.5),
       ),
       // Error borders kept in case the form is used elsewhere, but never triggered here
       errorBorder: OutlineInputBorder(
@@ -338,7 +338,7 @@ class _Header extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end:   Alignment.bottomRight,
-            colors: [AppColors.violet, AppColors.violetDeep],
+            colors: [AppColors.red, AppColors.redDeep],
           ),
         ),
         child: Stack(
@@ -566,12 +566,12 @@ class _TermsText extends StatelessWidget {
           const TextSpan(text: 'By signing up you agree to our '),
           TextSpan(
             text: 'Terms of Service',
-            style: TextStyle(color: AppColors.violet, fontWeight: FontWeight.w700),
+            style: TextStyle(color: AppColors.red, fontWeight: FontWeight.w700),
           ),
           const TextSpan(text: ' and '),
           TextSpan(
             text: 'Privacy Policy',
-            style: TextStyle(color: AppColors.violet, fontWeight: FontWeight.w700),
+            style: TextStyle(color: AppColors.red, fontWeight: FontWeight.w700),
           ),
           const TextSpan(text: '.'),
         ],
@@ -596,11 +596,11 @@ class _CreateAccountButton extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(28.r),
           gradient: const LinearGradient(
-            colors: [AppColors.violet, AppColors.violetDeep],
+            colors: [AppColors.red, AppColors.redDeep],
           ),
           boxShadow: [
             BoxShadow(
-              color: AppColors.violet.withValues(alpha: 0.35),
+              color: AppColors.red.withValues(alpha: 0.35),
               blurRadius: 18,
               offset: const Offset(0, 8),
             ),
@@ -722,7 +722,7 @@ class _SignInPrompt extends StatelessWidget {
               TextSpan(
                 text: 'Sign in',
                 style: TextStyle(
-                  color: AppColors.violet,
+                  color: AppColors.red,
                   fontWeight: FontWeight.w700,
                 ),
               ),

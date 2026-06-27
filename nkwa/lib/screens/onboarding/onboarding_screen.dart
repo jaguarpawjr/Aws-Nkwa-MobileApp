@@ -9,9 +9,9 @@ import 'widgets/animated_illustration.dart';
 
 // ─── Brand tokens ────────────────────────────────────────────────
 const _inkDeep = AppColors.inkDeep;
-const _violet = AppColors.violet;
-const _violetSoft = AppColors.violetSoft;
-const _lavender = AppColors.lavender;
+const _violet = AppColors.red;
+const _violetSoft = AppColors.redSoft;
+const _lavender = AppColors.redLight;
 const _gold = AppColors.gold;
 const _surface = AppColors.surface;
 

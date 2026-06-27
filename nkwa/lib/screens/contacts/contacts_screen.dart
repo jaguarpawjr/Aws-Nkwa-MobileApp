@@ -16,7 +16,26 @@ class ContactsScreen extends StatefulWidget {
 }
 
 class _ContactsScreenState extends State<ContactsScreen> {
+  final _searchController = TextEditingController();
+  String _query = '';
+
   List<ContactEntry> get _contacts => ContactsStore.contacts;
+  List<ContactEntry> get _filteredContacts {
+    final q = _query.trim().toLowerCase();
+    if (q.isEmpty) return _contacts;
+    return _contacts.where((contact) {
+      return contact.name.toLowerCase().contains(q) ||
+          contact.relation.toLowerCase().contains(q) ||
+          contact.phone.toLowerCase().contains(q) ||
+          contact.email.toLowerCase().contains(q);
+    }).toList();
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
 
   void _notifyComingSoon(String label) {
     ScaffoldMessenger.of(context).showSnackBar(
@@ -113,6 +132,8 @@ class _ContactsScreenState extends State<ContactsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final visibleContacts = _filteredContacts;
+
     return Scaffold(
       backgroundColor: AppColors.surface,
       body: Column(
@@ -124,7 +145,14 @@ class _ContactsScreenState extends State<ContactsScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const _SearchBar(),
+                  _SearchBar(
+                    controller: _searchController,
+                    onChanged: (value) => setState(() => _query = value),
+                    onClear: () {
+                      _searchController.clear();
+                      setState(() => _query = '');
+                    },
+                  ),
                   // SizedBox(height: 14.h),
                   // _AlertBanner(count: _contacts.length),
                   SizedBox(height: 20.h),
@@ -137,7 +165,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
                           height: 30.h,
                           padding: EdgeInsets.symmetric(horizontal: 12.w),
                           decoration: BoxDecoration(
-                            color: AppColors.violet,
+                            color: AppColors.red,
                             borderRadius: BorderRadius.circular(100.r),
                           ),
                           child: Row(
@@ -160,21 +188,26 @@ class _ContactsScreenState extends State<ContactsScreen> {
                     ],
                   ),
                   SizedBox(height: 12.h),
-                  ..._contacts.map(
-                    (c) => Padding(
-                      padding: EdgeInsets.only(bottom: 12.h),
-                      child: _ContactCard(
-                        contact: c,
-                        onEdit: () => _editContact(c),
-                        onDelete: () => _deleteContact(c),
-                        onNotifyChanged: (v) => setState(() => c.notify = v),
+                  if (visibleContacts.isEmpty)
+                    _EmptyContactsSearch(query: _query)
+                  else
+                    ...visibleContacts.map(
+                      (c) => Padding(
+                        padding: EdgeInsets.only(bottom: 12.h),
+                        child: _ContactCard(
+                          contact: c,
+                          onEdit: () => _editContact(c),
+                          onDelete: () => _deleteContact(c),
+                          onNotifyChanged: (v) => setState(() => c.notify = v),
+                        ),
                       ),
                     ),
-                  ),
                   SizedBox(height: 8.h),
                   Center(
                     child: Text(
-                      '${_contacts.length} contact${_contacts.length == 1 ? '' : 's'} in your circle',
+                      _query.trim().isEmpty
+                          ? '${_contacts.length} contact${_contacts.length == 1 ? '' : 's'} in your circle'
+                          : '${visibleContacts.length} match${visibleContacts.length == 1 ? '' : 'es'} found',
                       style: TextStyle(
                         fontSize: 11.sp,
                         color: AppColors.placeholder,
@@ -311,7 +344,15 @@ class _ContactsHeader extends StatelessWidget {
 // ─────────────────────────────────────────────────────────────────────────────
 
 class _SearchBar extends StatelessWidget {
-  const _SearchBar();
+  const _SearchBar({
+    required this.controller,
+    required this.onChanged,
+    required this.onClear,
+  });
+
+  final TextEditingController controller;
+  final ValueChanged<String> onChanged;
+  final VoidCallback onClear;
 
   @override
   Widget build(BuildContext context) {
@@ -324,7 +365,7 @@ class _SearchBar extends StatelessWidget {
         border: Border.all(color: const Color(0xFFE8E2FA), width: 1.5),
         boxShadow: [
           BoxShadow(
-            color: AppColors.violet.withValues(alpha: 0.05),
+            color: AppColors.red.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 3),
           ),
@@ -335,10 +376,78 @@ class _SearchBar extends StatelessWidget {
           Icon(Icons.search, size: 19.r, color: AppColors.placeholder),
           SizedBox(width: 10.w),
           Expanded(
-            child: Text(
-              'Search contacts...',
-              style: TextStyle(fontSize: 13.sp, color: AppColors.placeholder),
+            child: TextField(
+              controller: controller,
+              onChanged: onChanged,
+              textInputAction: TextInputAction.search,
+              style: TextStyle(fontSize: 13.sp, color: AppColors.inkDeep),
+              decoration: InputDecoration(
+                hintText: 'Search contacts...',
+                hintStyle: TextStyle(fontSize: 13.sp, color: AppColors.placeholder),
+                border: InputBorder.none,
+                isDense: true,
+              ),
             ),
+          ),
+          if (controller.text.isNotEmpty)
+            GestureDetector(
+              onTap: onClear,
+              child: Icon(Icons.close_rounded, size: 18.r, color: AppColors.placeholder),
+            ),
+        ],
+      ),
+    );
+  }
+}
+
+class _EmptyContactsSearch extends StatelessWidget {
+  const _EmptyContactsSearch({required this.query});
+  final String query;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      margin: EdgeInsets.only(bottom: 12.h),
+      padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 28.h),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: const Color(0xFFEDE8FB), width: 1),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.red.withValues(alpha: 0.05),
+            blurRadius: 12,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          Container(
+            width: 48.w,
+            height: 48.w,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: AppColors.redSoft,
+              shape: BoxShape.circle,
+            ),
+            child: Icon(Icons.search_off_rounded, size: 24.r, color: AppColors.red),
+          ),
+          SizedBox(height: 12.h),
+          Text(
+            'No contacts found',
+            style: TextStyle(
+              fontSize: 13.sp,
+              fontWeight: FontWeight.w700,
+              color: AppColors.inkDeep,
+            ),
+          ),
+          SizedBox(height: 4.h),
+          Text(
+            'No one matches "$query".',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 12.sp, color: AppColors.textMuted),
           ),
         ],
       ),
@@ -362,12 +471,12 @@ class _SearchBar extends StatelessWidget {
 //         color: Colors.white,
 //         borderRadius: BorderRadius.circular(18.r),
 //         border: Border.all(
-//           color: AppColors.violet.withValues(alpha: 0.15),
+//           color: AppColors.red.withValues(alpha: 0.15),
 //           width: 1,
 //         ),
 //         boxShadow: [
 //           BoxShadow(
-//             color: AppColors.violet.withValues(alpha: 0.05),
+//             color: AppColors.red.withValues(alpha: 0.05),
 //             blurRadius: 10,
 //             offset: const Offset(0, 3),
 //           ),
@@ -381,7 +490,7 @@ class _SearchBar extends StatelessWidget {
 //             alignment: Alignment.center,
 //             decoration: BoxDecoration(
 //               gradient: const LinearGradient(
-//                 colors: [AppColors.violet, AppColors.violetDeep],
+//                 colors: [AppColors.red, AppColors.redDeep],
 //               ),
 //               borderRadius: BorderRadius.circular(12.r),
 //             ),
@@ -468,7 +577,7 @@ class _ContactCard extends StatelessWidget {
         border: Border.all(color: const Color(0xFFEDE8FB), width: 1),
         boxShadow: [
           BoxShadow(
-            color: AppColors.violet.withValues(alpha: 0.05),
+            color: AppColors.red.withValues(alpha: 0.05),
             blurRadius: 12,
             offset: const Offset(0, 3),
           ),
@@ -566,7 +675,7 @@ class _ContactCard extends StatelessWidget {
                           Container(
                             padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 2.h),
                             decoration: BoxDecoration(
-                              color: AppColors.violetSoft,
+                              color: AppColors.redSoft,
                               borderRadius: BorderRadius.circular(5.r),
                             ),
                             child: Text(
@@ -574,7 +683,7 @@ class _ContactCard extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 10.sp,
                                 fontWeight: FontWeight.w500,
-                                color: AppColors.violet,
+                                color: AppColors.red,
                               ),
                             ),
                           ),
@@ -599,8 +708,8 @@ class _ContactCard extends StatelessWidget {
                   children: [
                     _IconAction(
                       icon: Icons.edit_outlined,
-                      bg: AppColors.violetSoft,
-                      color: AppColors.violet,
+                      bg: AppColors.redSoft,
+                      color: AppColors.red,
                       onTap: onEdit,
                     ),
                     SizedBox(height: 4.h),
@@ -662,7 +771,7 @@ class _ContactCard extends StatelessWidget {
                     value: contact.notify,
                     onChanged: onNotifyChanged,
                     activeThumbColor: Colors.white,
-                    activeTrackColor: AppColors.violet,
+                    activeTrackColor: AppColors.red,
                     inactiveThumbColor: Colors.white,
                     inactiveTrackColor: const Color(0xFFDDD9EE),
                   ),
@@ -737,7 +846,7 @@ class _BottomNavBar extends StatelessWidget {
         borderRadius: BorderRadius.circular(50.r),
         boxShadow: [
           BoxShadow(
-            color: AppColors.violet.withValues(alpha: 0.12),
+            color: AppColors.red.withValues(alpha: 0.12),
             blurRadius: 24,
             offset: const Offset(0, 10),
           ),
@@ -755,7 +864,7 @@ class _BottomNavBar extends StatelessWidget {
                 margin: EdgeInsets.symmetric(horizontal: 3.w),
                 padding: EdgeInsets.symmetric(vertical: 5.h),
                 decoration: BoxDecoration(
-                  color: isActive ? AppColors.violet : Colors.transparent,
+                  color: isActive ? AppColors.red : Colors.transparent,
                   borderRadius: BorderRadius.circular(50.r),
                 ),
                 child: Column(

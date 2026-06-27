@@ -15,7 +15,10 @@ class FirstAidDetailScreen extends StatelessWidget {
       backgroundColor: AppColors.surface,
       body: Column(
         children: [
-          _DetailHeader(entry: entry, onBack: () => Navigator.of(context).maybePop()),
+          _DetailHeader(
+            entry: entry,
+            onBack: () => Navigator.of(context).maybePop(),
+          ),
           Expanded(
             child: entry.hasDetail
                 ? _DetailBody(entry: entry)
@@ -111,7 +114,11 @@ class _DetailHeader extends StatelessWidget {
                           color: Colors.white.withValues(alpha: 0.18),
                           borderRadius: BorderRadius.circular(14.r),
                         ),
-                        child: Icon(entry.icon, color: Colors.white, size: 24.r),
+                        child: Icon(
+                          entry.icon,
+                          color: Colors.white,
+                          size: 24.r,
+                        ),
                       ),
                       SizedBox(width: 14.w),
                       Expanded(
@@ -165,7 +172,10 @@ class _HeaderChip extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white.withValues(alpha: 0.15),
         borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.25), width: 1),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.25),
+          width: 1,
+        ),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -212,7 +222,7 @@ class _DetailBody extends StatelessWidget {
                 borderRadius: BorderRadius.circular(18.r),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.violet.withValues(alpha: 0.06),
+                    color: AppColors.red.withValues(alpha: 0.06),
                     blurRadius: 12,
                     offset: const Offset(0, 4),
                   ),
@@ -284,7 +294,7 @@ class _StepCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(18.r),
         boxShadow: [
           BoxShadow(
-            color: AppColors.violet.withValues(alpha: 0.05),
+            color: AppColors.red.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -453,20 +463,24 @@ class _ComingSoonBody extends StatelessWidget {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
               decoration: BoxDecoration(
-                color: AppColors.violetSoft,
+                color: AppColors.redSoft,
                 borderRadius: BorderRadius.circular(20.r),
               ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(Icons.construction_rounded, size: 15.r, color: AppColors.violet),
+                  Icon(
+                    Icons.construction_rounded,
+                    size: 15.r,
+                    color: AppColors.red,
+                  ),
                   SizedBox(width: 8.w),
                   Text(
                     'Full guide coming soon',
                     style: TextStyle(
                       fontSize: 13.sp,
                       fontWeight: FontWeight.w600,
-                      color: AppColors.violet,
+                      color: AppColors.red,
                     ),
                   ),
                 ],

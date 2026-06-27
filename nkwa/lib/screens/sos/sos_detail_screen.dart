@@ -203,8 +203,8 @@ class _SosDetailScreenState extends State<SosDetailScreen>
                   SizedBox(height: 16.h),
                   _OptionCard(
                     icon: Icons.mic_rounded,
-                    iconColor: AppColors.violet,
-                    iconBg: AppColors.violetSoft,
+                    iconColor: AppColors.red,
+                    iconBg: AppColors.redSoft,
                     title: 'Record environment audio',
                     subtitle: 'Auto-sends 1-min clips for up to 10 minutes',
                     onTap: () => _showSheet(const _RecordAudioSheet()),
@@ -212,8 +212,8 @@ class _SosDetailScreenState extends State<SosDetailScreen>
                   SizedBox(height: 12.h),
                   _OptionCard(
                     icon: Icons.edit_note_rounded,
-                    iconColor: AppColors.violet,
-                    iconBg: AppColors.violetSoft,
+                    iconColor: AppColors.red,
+                    iconBg: AppColors.redSoft,
                     title: 'Type a message',
                     subtitle: 'Describe what\'s happening right now',
                     onTap: () => _showSheet(const _TypeMessageSheet()),
@@ -656,7 +656,7 @@ class _RecordAudioSheetState extends State<_RecordAudioSheet>
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
                   decoration: BoxDecoration(
-                    color: AppColors.violetSoft,
+                    color: AppColors.redSoft,
                     borderRadius: BorderRadius.circular(20.r),
                   ),
                   child: Row(
@@ -666,7 +666,7 @@ class _RecordAudioSheetState extends State<_RecordAudioSheet>
                         width: 7.w,
                         height: 7.w,
                         decoration: BoxDecoration(
-                          color: AppColors.violet,
+                          color: AppColors.red,
                           shape: BoxShape.circle,
                         ),
                       ),
@@ -676,7 +676,7 @@ class _RecordAudioSheetState extends State<_RecordAudioSheet>
                         style: TextStyle(
                           fontSize: 10.sp,
                           fontWeight: FontWeight.w800,
-                          color: AppColors.violet,
+                          color: AppColors.red,
                           letterSpacing: 0.8,
                         ),
                       ),
@@ -694,7 +694,7 @@ class _RecordAudioSheetState extends State<_RecordAudioSheet>
           width: double.infinity,
           padding: EdgeInsets.symmetric(vertical: 22.h),
           decoration: BoxDecoration(
-            color: AppColors.violetSoft,
+            color: AppColors.redSoft,
             borderRadius: BorderRadius.circular(20.r),
           ),
           child: Column(
@@ -714,7 +714,7 @@ class _RecordAudioSheetState extends State<_RecordAudioSheet>
                         height: 52.w,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                          color: AppColors.violet,
+                          color: AppColors.red,
                           shape: BoxShape.circle,
                         ),
                         child: Icon(Icons.mic_rounded, size: 24.r, color: Colors.white),
@@ -734,7 +734,7 @@ class _RecordAudioSheetState extends State<_RecordAudioSheet>
                 style: TextStyle(
                   fontSize: 36.sp,
                   fontWeight: FontWeight.w800,
-                  color: AppColors.violet,
+                  color: AppColors.red,
                   letterSpacing: 4,
                 ),
               ),
@@ -768,7 +768,7 @@ class _RecordAudioSheetState extends State<_RecordAudioSheet>
             value: progress,
             minHeight: 6.h,
             backgroundColor: AppColors.fieldBorder,
-            valueColor: AlwaysStoppedAnimation<Color>(AppColors.violet),
+            valueColor: AlwaysStoppedAnimation<Color>(AppColors.red),
           ),
         ),
         SizedBox(height: 16.h),
@@ -806,13 +806,13 @@ class _RecordAudioSheetState extends State<_RecordAudioSheet>
                         height: 32.w,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                          color: AppColors.violetSoft,
+                          color: AppColors.redSoft,
                           shape: BoxShape.circle,
                         ),
                         child: Icon(
                           Icons.graphic_eq_rounded,
                           size: 16.r,
-                          color: AppColors.violet,
+                          color: AppColors.red,
                         ),
                       ),
                       SizedBox(width: 10.w),
@@ -849,7 +849,7 @@ class _RecordAudioSheetState extends State<_RecordAudioSheet>
           child: ElevatedButton(
             onPressed: _stopRecording,
             style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.violet,
+              backgroundColor: AppColors.red,
               foregroundColor: Colors.white,
               elevation: 0,
               shape: RoundedRectangleBorder(
@@ -918,7 +918,7 @@ class _RecordRing extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(
-          color: AppColors.violet.withValues(alpha: opacity),
+          color: AppColors.red.withValues(alpha: opacity),
           width: 2.5,
         ),
       ),
@@ -1044,7 +1044,7 @@ class _MsgComposeContent extends StatelessWidget {
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(14.r),
-              borderSide: BorderSide(color: AppColors.violet, width: 1.5),
+              borderSide: BorderSide(color: AppColors.red, width: 1.5),
             ),
           ),
         ),
@@ -1055,7 +1055,7 @@ class _MsgComposeContent extends StatelessWidget {
           child: ElevatedButton(
             onPressed: onSend,
             style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.violet,
+              backgroundColor: AppColors.red,
               foregroundColor: Colors.white,
               elevation: 0,
               shape: RoundedRectangleBorder(
@@ -1284,7 +1284,7 @@ class _SituationSheetState extends State<_SituationSheet> {
                     ? null
                     : () => setState(() => _confirmed = true),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.violet,
+                  backgroundColor: AppColors.red,
                   foregroundColor: Colors.white,
                   disabledBackgroundColor: AppColors.fieldBorder,
                   elevation: 0,

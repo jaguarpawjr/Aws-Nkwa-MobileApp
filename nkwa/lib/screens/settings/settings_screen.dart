@@ -73,7 +73,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             onPressed: () => Navigator.of(context).pop(true),
             style: ElevatedButton.styleFrom(
               backgroundColor:
-                  isDestructive ? const Color(0xFFEF4444) : AppColors.violet,
+                  isDestructive ? const Color(0xFFEF4444) : AppColors.red,
               foregroundColor: Colors.white,
               elevation: 0,
               shape: RoundedRectangleBorder(
@@ -153,16 +153,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     children: [
                       _SettingsRow(
                         icon: Icons.person_outline,
-                        iconColor: AppColors.violet,
-                        iconBg: AppColors.violetSoft,
+                        iconColor: AppColors.red,
+                        iconBg: AppColors.redSoft,
                         label: 'Edit profile',
                         subtitle: 'Name, photo, phone, address',
                         onTap: () => _notifyComingSoon('Edit profile'),
                       ),
                       _SettingsRow(
                         icon: Icons.lock_outline,
-                        iconColor: AppColors.violet,
-                        iconBg: AppColors.violetSoft,
+                        iconColor: AppColors.red,
+                        iconBg: AppColors.redSoft,
                         label: 'Change password',
                         subtitle: 'Update your login credentials',
                         onTap: () => _notifyComingSoon('Change password'),
@@ -283,7 +283,7 @@ class _SettingsHeader extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [AppColors.violet, AppColors.violetDeep],
+          colors: [AppColors.red, AppColors.redDeep],
         ),
       ),
       child: Stack(
@@ -382,7 +382,7 @@ class _ProfileCard extends StatelessWidget {
           border: Border.all(color: const Color(0xFFEDE8FB), width: 1),
           boxShadow: [
             BoxShadow(
-              color: AppColors.violet.withValues(alpha: 0.10),
+              color: AppColors.red.withValues(alpha: 0.10),
               blurRadius: 20,
               offset: const Offset(0, 6),
             ),
@@ -397,7 +397,7 @@ class _ProfileCard extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(17.r),
                 border: Border.all(
-                  color: AppColors.violet.withValues(alpha: 0.18),
+                  color: AppColors.red.withValues(alpha: 0.18),
                   width: 1.5,
                 ),
               ),
@@ -406,28 +406,28 @@ class _ProfileCard extends StatelessWidget {
                 _avatarUrl,
                 fit: BoxFit.cover,
                 errorBuilder: (_, __, ___) => Container(
-                  color: AppColors.violetSoft,
+                  color: AppColors.redSoft,
                   alignment: Alignment.center,
                   child: Text(
                     'AB',
                     style: TextStyle(
                       fontSize: 17.sp,
                       fontWeight: FontWeight.w700,
-                      color: AppColors.violet,
+                      color: AppColors.red,
                     ),
                   ),
                 ),
                 loadingBuilder: (_, child, progress) {
                   if (progress == null) return child;
                   return Container(
-                    color: AppColors.violetSoft,
+                    color: AppColors.redSoft,
                     alignment: Alignment.center,
                     child: Text(
                       'AB',
                       style: TextStyle(
                         fontSize: 17.sp,
                         fontWeight: FontWeight.w700,
-                        color: AppColors.violet,
+                        color: AppColors.red,
                       ),
                     ),
                   );
@@ -514,16 +514,16 @@ class _ProfileCard extends StatelessWidget {
                 height: 36.w,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: AppColors.violetSoft,
+                  color: AppColors.redSoft,
                   borderRadius: BorderRadius.circular(11.r),
                   border: Border.all(
-                    color: AppColors.violet.withValues(alpha: 0.15),
+                    color: AppColors.red.withValues(alpha: 0.15),
                   ),
                 ),
                 child: Icon(
                   Icons.edit_outlined,
                   size: 16.r,
-                  color: AppColors.violet,
+                  color: AppColors.red,
                 ),
               ),
             ),
@@ -576,7 +576,7 @@ class _SettingsGroup extends StatelessWidget {
         border: Border.all(color: const Color(0xFFEDE8FB), width: 1),
         boxShadow: [
           BoxShadow(
-            color: AppColors.violet.withValues(alpha: 0.04),
+            color: AppColors.red.withValues(alpha: 0.04),
             blurRadius: 12,
             offset: const Offset(0, 4),
           ),
@@ -709,7 +709,7 @@ class _BottomNavBar extends StatelessWidget {
         borderRadius: BorderRadius.circular(50.r),
         boxShadow: [
           BoxShadow(
-            color: AppColors.violet.withValues(alpha: 0.12),
+            color: AppColors.red.withValues(alpha: 0.12),
             blurRadius: 24,
             offset: const Offset(0, 10),
           ),
@@ -727,7 +727,7 @@ class _BottomNavBar extends StatelessWidget {
                 margin: EdgeInsets.symmetric(horizontal: 3.w),
                 padding: EdgeInsets.symmetric(vertical: 5.h),
                 decoration: BoxDecoration(
-                  color: isActive ? AppColors.violet : Colors.transparent,
+                  color: isActive ? AppColors.red : Colors.transparent,
                   borderRadius: BorderRadius.circular(50.r),
                 ),
                 child: Column(

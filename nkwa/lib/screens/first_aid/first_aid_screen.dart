@@ -56,7 +56,7 @@ class _FirstAidScreenState extends State<FirstAidScreen> {
       });
       return;
     }
-    final results = _guides.where((g) => g.matchesQuery(query)).take(2).toList();
+    final results = _guides.where((g) => g.matchesQuery(query)).toList();
     setState(() {
       _searchResults = results;
       _lastQuery = query;
@@ -74,17 +74,6 @@ class _FirstAidScreenState extends State<FirstAidScreen> {
   void _openGuide(FirstAidEntry entry) {
     Navigator.of(context).push(
       MaterialPageRoute(builder: (_) => FirstAidDetailScreen(entry: entry)),
-    );
-  }
-
-  void _notifyComingSoon(String label) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('$label — coming soon'),
-        behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
-        margin: EdgeInsets.fromLTRB(16.w, 0, 16.w, 16.h),
-      ),
     );
   }
 
@@ -131,7 +120,6 @@ class _FirstAidScreenState extends State<FirstAidScreen> {
                     onSearch: _runSearch,
                     onClear: _clearSearch,
                     onGuideTab: _openGuide,
-                    onSeeAll: () => _notifyComingSoon('See all guides'),
                   )
                 : const _AiTab(),
           ),
@@ -163,7 +151,7 @@ class _FirstAidHeader extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [AppColors.violet, Color(0xFF9333EA)],
+          colors: [AppColors.red, Color(0xFF9333EA)],
         ),
       ),
       child: Stack(
@@ -310,7 +298,7 @@ class _TabChip extends StatelessWidget {
           boxShadow: isActive
               ? [
                   BoxShadow(
-                    color: AppColors.violetDeep.withValues(alpha: 0.18),
+                    color: AppColors.redDeep.withValues(alpha: 0.18),
                     blurRadius: 8,
                     offset: const Offset(0, 2),
                   )
@@ -322,7 +310,7 @@ class _TabChip extends StatelessWidget {
           style: TextStyle(
             fontSize: 13.sp,
             fontWeight: isActive ? FontWeight.w700 : FontWeight.w500,
-            color: isActive ? AppColors.violet : Colors.white.withValues(alpha: 0.85),
+            color: isActive ? AppColors.red : Colors.white.withValues(alpha: 0.85),
           ),
         ),
       ),
@@ -342,7 +330,6 @@ class _OfflineTab extends StatelessWidget {
     required this.onSearch,
     required this.onClear,
     required this.onGuideTab,
-    required this.onSeeAll,
   });
 
   final bool isLoading;
@@ -353,14 +340,13 @@ class _OfflineTab extends StatelessWidget {
   final VoidCallback onSearch;
   final VoidCallback onClear;
   final ValueChanged<FirstAidEntry> onGuideTab;
-  final VoidCallback onSeeAll;
 
   @override
   Widget build(BuildContext context) {
     if (isLoading) {
       return Center(
         child: CircularProgressIndicator(
-          color: AppColors.violet,
+          color: AppColors.red,
           strokeWidth: 2.5,
         ),
       );
@@ -388,7 +374,6 @@ class _OfflineTab extends StatelessWidget {
           _PopularGuidesSection(
             guides: guides,
             onGuideTab: onGuideTab,
-            onSeeAll: onSeeAll,
           ),
         ],
       ),
@@ -417,7 +402,7 @@ class _SearchBar extends StatelessWidget {
         borderRadius: BorderRadius.circular(18.r),
         boxShadow: [
           BoxShadow(
-            color: AppColors.violet.withValues(alpha: 0.08),
+            color: AppColors.red.withValues(alpha: 0.08),
             blurRadius: 16,
             offset: const Offset(0, 4),
           ),
@@ -452,7 +437,7 @@ class _SearchBar extends StatelessWidget {
                 height: 38.w,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: AppColors.violet,
+                  color: AppColors.red,
                   borderRadius: BorderRadius.circular(12.r),
                 ),
                 child: Icon(Icons.chevron_right, color: Colors.white, size: 20.r),
@@ -525,7 +510,7 @@ class _EmptySearchState extends StatelessWidget {
         borderRadius: BorderRadius.circular(18.r),
         boxShadow: [
           BoxShadow(
-            color: AppColors.violet.withValues(alpha: 0.05),
+            color: AppColors.red.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -538,10 +523,10 @@ class _EmptySearchState extends StatelessWidget {
             height: 52.w,
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: AppColors.violetSoft,
+              color: AppColors.redSoft,
               shape: BoxShape.circle,
             ),
-            child: Icon(Icons.search_off_rounded, size: 26.r, color: AppColors.violet),
+            child: Icon(Icons.search_off_rounded, size: 26.r, color: AppColors.red),
           ),
           SizedBox(height: 12.h),
           Text(
@@ -569,43 +554,24 @@ class _PopularGuidesSection extends StatelessWidget {
   const _PopularGuidesSection({
     required this.guides,
     required this.onGuideTab,
-    required this.onSeeAll,
   });
 
   final List<FirstAidEntry> guides;
   final ValueChanged<FirstAidEntry> onGuideTab;
-  final VoidCallback onSeeAll;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          children: [
-            Expanded(
-              child: Text(
-                'POPULAR GUIDES',
-                style: TextStyle(
-                  fontSize: 11.sp,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.placeholder,
-                  letterSpacing: 0.6,
-                ),
-              ),
-            ),
-            GestureDetector(
-              onTap: onSeeAll,
-              child: Text(
-                'See all',
-                style: TextStyle(
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w700,
-                  color: AppColors.violet,
-                ),
-              ),
-            ),
-          ],
+        Text(
+          'ALL GUIDES',
+          style: TextStyle(
+            fontSize: 11.sp,
+            fontWeight: FontWeight.w600,
+            color: AppColors.placeholder,
+            letterSpacing: 0.6,
+          ),
         ),
         SizedBox(height: 12.h),
         Column(
@@ -641,7 +607,7 @@ class _GuideCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(18.r),
           boxShadow: [
             BoxShadow(
-              color: AppColors.violet.withValues(alpha: 0.05),
+              color: AppColors.red.withValues(alpha: 0.05),
               blurRadius: 10,
               offset: const Offset(0, 4),
             ),
@@ -720,14 +686,14 @@ class _AiTab extends StatelessWidget {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                  colors: [AppColors.violet, AppColors.violetDeep],
+                  colors: [AppColors.red, AppColors.redDeep],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
                 borderRadius: BorderRadius.circular(22.r),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.violet.withValues(alpha: 0.28),
+                    color: AppColors.red.withValues(alpha: 0.28),
                     blurRadius: 20,
                     offset: const Offset(0, 8),
                   ),
@@ -758,20 +724,20 @@ class _AiTab extends StatelessWidget {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 13.h),
               decoration: BoxDecoration(
-                color: AppColors.violetSoft,
+                color: AppColors.redSoft,
                 borderRadius: BorderRadius.circular(22.r),
               ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(Icons.construction_rounded, size: 16.r, color: AppColors.violet),
+                  Icon(Icons.construction_rounded, size: 16.r, color: AppColors.red),
                   SizedBox(width: 8.w),
                   Text(
                     'Coming soon',
                     style: TextStyle(
                       fontSize: 13.sp,
                       fontWeight: FontWeight.w600,
-                      color: AppColors.violet,
+                      color: AppColors.red,
                     ),
                   ),
                 ],
@@ -808,7 +774,7 @@ class _FirstAidBottomNav extends StatelessWidget {
         borderRadius: BorderRadius.circular(50.r),
         boxShadow: [
           BoxShadow(
-            color: AppColors.violet.withValues(alpha: 0.12),
+            color: AppColors.red.withValues(alpha: 0.12),
             blurRadius: 24,
             offset: const Offset(0, 10),
           ),
@@ -826,7 +792,7 @@ class _FirstAidBottomNav extends StatelessWidget {
                 margin: EdgeInsets.symmetric(horizontal: 3.w),
                 padding: EdgeInsets.symmetric(vertical: 5.h),
                 decoration: BoxDecoration(
-                  color: isActive ? AppColors.violet : Colors.transparent,
+                  color: isActive ? AppColors.red : Colors.transparent,
                   borderRadius: BorderRadius.circular(50.r),
                 ),
                 child: Column(

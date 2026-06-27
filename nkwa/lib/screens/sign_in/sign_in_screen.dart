@@ -117,7 +117,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           style: TextStyle(
                             fontSize: 13.sp,
                             fontWeight: FontWeight.w600,
-                            color: AppColors.violet,
+                            color: AppColors.red,
                           ),
                         ),
                       ),
@@ -177,7 +177,7 @@ Widget _buildTextField({
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(14.r),
-        borderSide: BorderSide(color: AppColors.violet, width: 1.5),
+        borderSide: BorderSide(color: AppColors.red, width: 1.5),
       ),
       errorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(14.r),
@@ -211,7 +211,7 @@ class _Header extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end:   Alignment.bottomRight,
-            colors: [AppColors.violet, AppColors.violetDeep],
+            colors: [AppColors.red, AppColors.redDeep],
           ),
         ),
         child: Stack(
@@ -321,11 +321,11 @@ class _SignInButton extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(28.r),
           gradient: const LinearGradient(
-            colors: [AppColors.violet, AppColors.violetDeep],
+            colors: [AppColors.red, AppColors.redDeep],
           ),
           boxShadow: [
             BoxShadow(
-              color: AppColors.violet.withValues(alpha: 0.35),
+              color: AppColors.red.withValues(alpha: 0.35),
               blurRadius: 18,
               offset: const Offset(0, 8),
             ),
@@ -447,7 +447,7 @@ class _SignUpPrompt extends StatelessWidget {
               TextSpan(
                 text: 'Sign up',
                 style: TextStyle(
-                  color: AppColors.violet,
+                  color: AppColors.red,
                   fontWeight: FontWeight.w700,
                 ),
               ),
